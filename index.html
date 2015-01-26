@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> AngularJS Task#2 </title>
+		<link rel="stylesheet" href="bootstrap.css"/>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body ng-app="forecast">
+		<br>
+		<div class="center" ng-controller="forecastController">
+			<form class="form-inline">
+				<div class="form-group">
+					<label for="selectCity">Select city: </label>
+					<select ng-model="city" class="form-control">
+					<option ng-repeat="c in cities">{{c}}</option>
+				</select>
+				</div>
+			</form>
+			<table class="table">
+				<caption>Weather info:</caption>
+				<tr>
+					<td>Sky: </td>
+					<td>{{data.weather[0].description}}</td>
+				</tr>
+				<tr>
+					<td>Temperature: </td>
+					<td>{{data.main.temp}}</td>
+				</tr>
+				<tr>
+					<td>Humidity: </td>
+					<td>{{data.main.humidity}}</td>
+				</tr>
+				<tr>
+					<td>Pressure: </td>
+					<td>{{data.main.pressure}}</td>
+				</tr>
+				<tr>
+					<td>Wind speed: </td>
+					<td>{{data.wind.speed}}</td>
+				</tr>
+			</table>
+		</div>
+		<script src="angular.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
